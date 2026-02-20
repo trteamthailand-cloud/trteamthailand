@@ -4,16 +4,15 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dogs | TR Team Thailand</title>
-  <meta name="description" content="Dogs for adoption – TR Team Thailand.">
+  <meta name="description" content="Dogs for adoption – TR Team Thailand." />
   <link rel="icon" href="assets/logo.png">
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 
 <body>
-
-<header>
-  <div class="container">
-    <div class="nav">
+  <!-- Header -->
+  <header>
+    <div class="container nav">
       <a class="brand" href="index.html">
         <img src="assets/logo.png" alt="TR Team Thailand logo">
         <div>
@@ -22,101 +21,130 @@
         </div>
       </a>
 
-      <nav class="menu">
+      <nav class="menu" aria-label="Primary">
         <a href="dogs.html">หมาหาบ้าน | Dogs</a>
         <a href="apply.html">สมัครอุปการะ | Apply</a>
         <a href="donate.html">บริจาค | Donate</a>
         <a href="about.html">รู้จักเรา | About</a>
         <a href="contact.html">ติดต่อ | Contact</a>
+        <a class="btn orange small" href="apply.html">เริ่มคัดบ้าน</a>
       </nav>
     </div>
-  </div>
-</header>
+  </header>
 
-<main>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-card">
+        <h1>หมาหาบ้าน | Dogs for Adoption</h1>
+        <p class="tagline">เขาคัดบ้านโหด แต่ปลอดภัยมาก 🤎</p>
+        <p class="lead">
+          เลือกน้องที่คุณสนใจ แล้วกด “สมัครรับอุปการะเคสนี้” เพื่อไปยังฟอร์มคัดบ้านของ TR Team
+        </p>
 
-<section class="hero">
-  <div class="container">
-    <div class="hero-card">
-      <h1>หมาหาบ้าน | Dogs for Adoption</h1>
-      <p class="tagline">เขาคัดบ้านโหด แต่ปลอดภัยมาก 🤎</p>
-      <p class="lead">
-        เลือกน้องที่คุณสนใจ แล้วกด “สมัครรับอุปการะ” เพื่อเข้าสู่กระบวนการคัดบ้านของ TR Team
+        <div class="btn-row">
+          <a class="btn orange" href="apply.html">📝 เริ่มคัดบ้าน (Apply)</a>
+          <a class="btn green" href="#contact-team">📲 ติดต่อทีมคัดบ้าน</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- List -->
+  <main class="section">
+    <div class="container">
+      <h2>น้องหมากำลังรอบ้าน</h2>
+      <p class="small">
+        *ตอนนี้เป็น “ตัวอย่างหน้า” เพื่อวางระบบก่อน — เดี๋ยวเราใส่เคสจริง/รูปจริงทีละเคสได้เลยค่ะ
       </p>
+
+      <!-- Grid -->
+      <div class="dog-grid">
+
+        <!-- Card 1 -->
+        <article class="dog-card">
+          <div class="dog-photo">
+            <!-- เปลี่ยนเป็นรูปจริง เช่น assets/dogs/TR214-copper.jpg -->
+            <img src="assets/logo.png" alt="TR214 Copper">
+            <span class="badge status available">🟢 พร้อมหาบ้าน</span>
+          </div>
+
+          <div class="dog-body">
+            <h3 class="dog-title">TR214 • Copper</h3>
+            <p class="dog-meta">เพศ: ผู้ • อายุ: 2 ปี • น้ำหนัก: 18 กก.</p>
+            <p class="dog-meta">พื้นที่: กรุงเทพฯ/ปริมณฑล (ตัวอย่าง)</p>
+            <p class="dog-desc">นิสัย: อ่อนโยน ขี้เล่น รักคน สุขภาพแข็งแรง</p>
+
+            <div class="dog-actions">
+              <a class="btn orange small" href="apply.html">สมัครรับอุปการะเคสนี้</a>
+              <a class="btn ghost small" href="#contact-team">ทักทีม</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="dog-card">
+          <div class="dog-photo">
+            <img src="assets/logo.png" alt="TR215 Laika">
+            <span class="badge status screening">🟡 กำลังคัดบ้าน</span>
+          </div>
+
+          <div class="dog-body">
+            <h3 class="dog-title">TR215 • Laika</h3>
+            <p class="dog-meta">เพศ: เมีย • อายุ: 3 ปี • น้ำหนัก: 15 กก.</p>
+            <p class="dog-meta">พื้นที่: เพชรบุรี/หัวหิน (ตัวอย่าง)</p>
+            <p class="dog-desc">นิสัย: สุภาพ เข้ากับเด็กได้ ต้องการบ้านอบอุ่น</p>
+
+            <div class="dog-actions">
+              <a class="btn orange small" href="apply.html">สมัครรับอุปการะเคสนี้</a>
+              <a class="btn ghost small" href="#contact-team">ทักทีม</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="dog-card">
+          <div class="dog-photo">
+            <img src="assets/logo.png" alt="TR192 Mumu">
+            <span class="badge status adopted">🔴 ได้บ้านแล้ว</span>
+          </div>
+
+          <div class="dog-body">
+            <h3 class="dog-title">TR192 • Mumu</h3>
+            <p class="dog-meta">เพศ: เมีย • อายุ: 1 ปี • น้ำหนัก: 10 กก.</p>
+            <p class="dog-meta">พื้นที่: เชียงใหม่ (ตัวอย่าง)</p>
+            <p class="dog-desc">สถานะตัวอย่าง: เคสนี้ปิดแล้ว (ไว้โชว์ระบบสถานะ)</p>
+
+            <div class="dog-actions">
+              <a class="btn ghost small" href="dogs.html">ดูเคสอื่น</a>
+              <a class="btn green small" href="donate.html">ช่วยเคสถัดไป</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Contact -->
+      <section id="contact-team" class="contact-card">
+        <h2>ติดต่อทีมคัดบ้าน</h2>
+        <p class="small">
+          ถ้าคุณอยากให้ทีมช่วยแนะนำ “น้องที่เหมาะกับไลฟ์สไตล์” ทักมาได้เลยค่ะ  
+          (คุณสามารถใส่ลิงก์ Facebook / Line / โทร ในหน้านี้ทีหลังได้)
+        </p>
+
+        <div class="btn-row">
+          <a class="btn green" href="contact.html">ไปหน้าติดต่อ</a>
+          <a class="btn ghost" href="apply.html">ไปฟอร์มคัดบ้าน</a>
+        </div>
+      </section>
+
     </div>
-  </div>
-</section>
+  </main>
 
-<section class="section">
-  <div class="container">
-    <h2>น้องหมากำลังรอบ้าน</h2>
-    <p class="small">ทุกตัวผ่านการประเมินเบื้องต้น และพร้อมเข้าสู่บ้านที่เหมาะสม 🐾</p>
-
-    <div class="card">
-
-      <!-- Copper -->
-      <div class="dog-item">
-        <h3>
-          TR214 • Copper
-          <span class="status available">🟢 Available</span>
-        </h3>
-        <p>เพศ: ผู้ • อายุ: 2 ปี • น้ำหนัก: 18 กก.</p>
-        <p>นิสัย: อ่อนโยน ขี้เล่น รักคน สุขภาพแข็งแรง</p>
-
-        <div style="margin-top:14px;">
-          <a class="btn orange" href="apply.html?dog=TR214-Copper">
-            📝 สมัครรับอุปการะเคสนี้
-          </a>
-        </div>
-      </div>
-
-      <hr style="margin:30px 0; opacity:0.1;">
-
-      <!-- Laika -->
-      <div class="dog-item">
-        <h3>
-          TR215 • Laika
-          <span class="status screening">🟡 Under Screening</span>
-        </h3>
-        <p>เพศ: เมีย • อายุ: 3 ปี • น้ำหนัก: 15 กก.</p>
-        <p>นิสัย: สุภาพ เข้ากับเด็กได้ ต้องการบ้านอบอุ่น</p>
-
-        <div style="margin-top:14px;">
-          <a class="btn orange" href="apply.html?dog=TR215-Laika">
-            📝 สมัครรับอุปการะเคสนี้
-          </a>
-        </div>
-      </div>
-
-      <hr style="margin:30px 0; opacity:0.1;">
-
-      <!-- Mumu -->
-      <div class="dog-item">
-        <h3>
-          TR192 • Mumu
-          <span class="status adopted">🔴 Adopted</span>
-        </h3>
-        <p>เพศ: เมีย • อายุ: 1 ปี • น้ำหนัก: 12 กก.</p>
-        <p>นิสัย: ร่าเริง ฉลาด ฝึกง่าย</p>
-
-        <div style="margin-top:14px;">
-          <a class="btn" style="background:#ccc; cursor:not-allowed;">
-            ได้บ้านแล้ว
-          </a>
-        </div>
-      </div>
-
+  <footer>
+    <div class="container">
+      TR Team Thailand © 2026
     </div>
-  </div>
-</section>
-
-</main>
-
-<footer>
-  <div class="container">
-    <p class="small">© TR Team Thailand — Forever Means Forever.</p>
-  </div>
-</footer>
-
+  </footer>
 </body>
 </html>
