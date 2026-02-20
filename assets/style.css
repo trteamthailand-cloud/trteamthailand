@@ -1,196 +1,379 @@
-/* ================================
-   TR Team Thailand - FULL CSS
-   Safe 3x3 Grid Version
-   ================================= */
+/* =========================
+   TR Team Thailand - style.css
+   ========================= */
 
 :root{
-  --bg:#f6efe7;
-  --card:#ffffff;
-  --ink:#3e2f2a;
-  --muted:#6b5e58;
-  --green:#2e7d6b;
-  --orange:#f2a046;
-  --orange-dark:#e0892f;
-  --border:rgba(0,0,0,.08);
-  --shadow:0 15px 40px rgba(0,0,0,.08);
+  --bg: #f6efe7;
+  --surface: #ffffff;
+  --ink: #3a2f28;
+  --muted: #6e5f55;
+  --brand: #1f7a6b;      /* เขียว */
+  --brand-2: #f2a64a;    /* ส้ม */
+  --line: rgba(0,0,0,0.08);
+  --shadow: 0 14px 40px rgba(0,0,0,0.08);
+  --radius: 18px;
+  --radius-lg: 26px;
+  --container: 1180px;
 }
 
-*{
-  box-sizing:border-box;
-}
-
+*{ box-sizing: border-box; }
+html,body{ height:100%; }
 body{
   margin:0;
-  font-family:Segoe UI, system-ui, sans-serif;
-  background:var(--bg);
-  color:var(--ink);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  background: radial-gradient(1200px 600px at 20% 10%, #efe7da 0%, var(--bg) 55%, #f7f2ec 100%);
+  color: var(--ink);
 }
 
-img{
-  width:100%;
-  display:block;
+a{ color: inherit; text-decoration: none; }
+img{ max-width: 100%; display:block; }
+
+.container{
+  width: min(var(--container), calc(100% - 36px));
+  margin: 0 auto;
 }
 
-/* ================================
-   GRID SYSTEM (สำคัญที่สุด)
-   ================================= */
-
-.dog-grid{
-  display:grid;
-  grid-template-columns:repeat(3, 1fr);
-  gap:24px;
-  margin-top:20px;
-  width:100%;
+.page{
+  padding: 24px 0 60px;
 }
 
-/* ================================
-   CARD
-   ================================= */
+/* =========================
+   Top nav
+   ========================= */
 
-.dog-card{
-  background:var(--card);
-  border-radius:20px;
-  box-shadow:var(--shadow);
-  overflow:hidden;
-  transition:0.2s ease;
+.topbar{
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: rgba(246,239,231,0.75);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav{
   display:flex;
-  flex-direction:column;
+  align-items:center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 12px 0;
 }
 
-.dog-card:hover{
-  transform:translateY(-6px);
-}
-
-.dog-photo{
-  position:relative;
-  height:220px;
-  background:linear-gradient(135deg,#e8f5f1,#fde8cf);
-}
-
-.dog-photo img{
-  height:100%;
-  object-fit:cover;
-}
-
-.dog-body{
-  padding:18px;
+.brand{
   display:flex;
-  flex-direction:column;
-  gap:6px;
+  align-items:center;
+  gap: 10px;
+  min-width: 220px;
+}
+.brand img{
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: #fff;
+  padding: 4px;
+}
+.brand .title{
+  font-weight: 750;
+  line-height: 1.1;
+}
+.brand .sub{
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 2px;
 }
 
-.dog-body h3{
-  margin:0;
-  font-size:16px;
+.menu{
+  display:flex;
+  align-items:center;
+  gap: 18px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.menu a{
+  font-size: 14px;
+  color: var(--muted);
+  padding: 8px 10px;
+  border-radius: 10px;
+}
+.menu a:hover{
+  background: rgba(0,0,0,0.04);
+  color: var(--ink);
+}
+.menu a.active{
+  background: rgba(31,122,107,0.10);
+  color: var(--brand);
+  font-weight: 650;
 }
 
-.dog-body p{
-  margin:0;
-  font-size:13px;
-  color:var(--muted);
+.nav-right{
+  display:flex;
+  align-items:center;
+  gap: 10px;
 }
 
-/* ================================
-   BADGE STATUS
-   ================================= */
-
-.badge{
-  position:absolute;
-  top:10px;
-  left:10px;
-  padding:6px 10px;
-  border-radius:999px;
-  font-size:12px;
-  font-weight:700;
-  background:white;
-}
-
-.status.available{
-  background:#e6f6ef;
-  color:#1b7f5c;
-}
-
-.status.screening{
-  background:#fff4e0;
-  color:#c67c00;
-}
-
-.status.adopted{
-  background:#fdeaea;
-  color:#b00020;
-}
-
-/* ================================
-   BUTTONS
-   ================================= */
+/* =========================
+   Buttons
+   ========================= */
 
 .btn{
-  display:inline-block;
-  padding:10px 16px;
-  border-radius:999px;
-  font-weight:700;
-  font-size:13px;
-  text-decoration:none;
-  transition:0.2s ease;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap: 8px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+  user-select: none;
 }
+.btn:hover{ transform: translateY(-1px); box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
+.btn:active{ transform: translateY(0px); box-shadow: none; }
 
+.btn.green{
+  background: var(--brand);
+  color: #fff;
+  border-color: rgba(0,0,0,0.05);
+}
 .btn.orange{
-  background:var(--orange);
-  color:white;
-}
-
-.btn.orange:hover{
-  background:var(--orange-dark);
-}
-
-.btn.small{
-  font-size:12px;
-  padding:8px 14px;
+  background: var(--brand-2);
+  color: #fff;
+  border-color: rgba(0,0,0,0.05);
 }
 
 .btn.ghost{
-  border:1px solid var(--border);
-  background:white;
-  color:var(--ink);
+  background: transparent;
 }
 
-/* ================================
-   RESPONSIVE
-   ================================= */
-
-@media (max-width:1024px){
-  .dog-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
+.btn.small{
+  padding: 10px 14px;
+  font-size: 13px;
 }
 
-@media (max-width:640px){
-  .dog-grid{
-    grid-template-columns:1fr;
-  }
+.btn.disabled,
+.btn[aria-disabled="true"]{
+  opacity: 0.55;
+  pointer-events: none;
 }
-/* ===== HERO FIX (restore original top section) ===== */
 
-.hero {
-  background: #f3ede4;
-  padding: 60px 20px;
-  border-radius: 24px;
-  margin: 40px auto;
-  max-width: 1100px;
+/* =========================
+   Hero
+   ========================= */
+
+.hero{
+  margin-top: 26px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.75), rgba(255,255,255,0.60));
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.hero-inner{
+  padding: 44px 28px;
   text-align: center;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
-.hero h1 {
-  font-size: 36px;
-  margin-bottom: 10px;
+.hero h1{
+  margin: 0;
+  font-size: clamp(26px, 3vw, 38px);
+  letter-spacing: 0.2px;
 }
 
-.hero p {
+.hero .tagline{
+  margin: 10px auto 0;
+  color: var(--brand);
+  font-weight: 750;
+}
+
+.hero .desc{
+  margin: 12px auto 0;
+  max-width: 760px;
+  color: var(--muted);
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+
+.hero-actions{
+  display:flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+
+.section-title{
+  margin: 26px 0 6px;
+  font-size: 20px;
+  font-weight: 800;
+}
+.section-note{
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: 13.5px;
+}
+
+/* =========================
+   Cards grid (3x3)
+   ========================= */
+
+.dogs-grid{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  align-items: stretch;
+}
+
+.dog-card{
+  background: rgba(255,255,255,0.78);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+  overflow: hidden;
+  display:flex;
+  flex-direction: column;
+}
+
+.dog-media{
+  position: relative;
+  height: 180px;
+  background: linear-gradient(135deg, #e3efe9, #f4e7d6);
+  border-bottom: 1px solid var(--line);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.dog-media img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.badge{
+  position:absolute;
+  top: 12px;
+  left: 12px;
+  display:inline-flex;
+  align-items:center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 12px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.86);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+.dot{
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  display:inline-block;
+}
+.badge.ready .dot{ background: #23b26d; }
+.badge.screening .dot{ background: #f2a64a; }
+.badge.closed .dot{ background: #e05656; }
+
+.dog-body{
+  padding: 14px 16px 16px;
+  display:flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.dog-name{
+  font-weight: 900;
   font-size: 16px;
-  opacity: 0.8;
+  margin: 0;
 }
 
-.hero .btn {
-  margin: 10px 8px 0 8px;
+.meta{
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.actions{
+  margin-top: auto;
+  display:flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.actions .btn{
+  flex: 1;
+}
+
+/* “ได้บ้านแล้ว” ปรับให้ปุ่มเป็นสีเทา + แสดงลุคปิดเคส */
+.dog-card.closed{
+  opacity: 0.92;
+}
+.dog-card.closed .btn.orange{
+  background: #d8d2cb;
+  color: #6a5d54;
+  border-color: rgba(0,0,0,0.06);
+}
+
+/* =========================
+   Contact panel
+   ========================= */
+
+.panel{
+  margin-top: 22px;
+  background: rgba(255,255,255,0.78);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+  padding: 18px;
+}
+
+.panel h2{
+  margin: 0 0 6px;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.panel p{
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: 13.5px;
+  line-height: 1.6;
+}
+
+.panel .panel-actions{
+  display:flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* =========================
+   Footer
+   ========================= */
+
+.footer{
+  margin-top: 26px;
+  padding: 18px 0;
+  color: var(--muted);
+  text-align: center;
+  font-size: 13px;
+}
+
+/* =========================
+   Responsive
+   ========================= */
+
+@media (max-width: 1020px){
+  .dogs-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .brand{ min-width: 180px; }
+}
+@media (max-width: 620px){
+  .dogs-grid{ grid-template-columns: 1fr; }
+  .nav{ gap: 10px; }
+  .menu{ display:none; } /* มือถือซ่อนเมนูยาวก่อน */
+  .hero-inner{ padding: 34px 18px; }
+  .dog-media{ height: 170px; }
 }
