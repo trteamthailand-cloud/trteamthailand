@@ -1,313 +1,171 @@
-/* =========================
-   TR Team Thailand - Global Stylesheet
-   File: assets/style.css
-   Card grid version (Dogs)
-   ========================= */
+/* ================================
+   TR Team Thailand - FULL CSS
+   Safe 3x3 Grid Version
+   ================================= */
 
 :root{
-  --bg: #F6EFE7;
-  --bg2:#EFE6DD;
-  --card:#FFFFFF;
-
-  --ink:#3E2F2A;
-  --muted:#6B5E58;
-
-  --green:#2E7D6B;
-  --green2:#1b7f5c;
-
-  --orange:#F2A046;
-  --orange2:#E0892F;
-
-  --line: rgba(62,47,42,.12);
-  --shadow: 0 18px 50px rgba(0,0,0,.08);
-  --shadow2: 0 10px 28px rgba(0,0,0,.07);
-
-  --radius: 22px;
+  --bg:#f6efe7;
+  --card:#ffffff;
+  --ink:#3e2f2a;
+  --muted:#6b5e58;
+  --green:#2e7d6b;
+  --orange:#f2a046;
+  --orange-dark:#e0892f;
+  --border:rgba(0,0,0,.08);
+  --shadow:0 15px 40px rgba(0,0,0,.08);
 }
 
-*{ box-sizing:border-box; }
-html,body{ margin:0; padding:0; }
+*{
+  box-sizing:border-box;
+}
+
 body{
-  font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
-  background: var(--bg);
-  color: var(--ink);
+  margin:0;
+  font-family:Segoe UI, system-ui, sans-serif;
+  background:var(--bg);
+  color:var(--ink);
 }
 
-img{ max-width:100%; display:block; }
-a{ color:inherit; text-decoration:none; }
-
-.container{
-  width: min(1120px, 92vw);
-  margin: 0 auto;
+img{
+  width:100%;
+  display:block;
 }
 
-/* ---- Header / Nav ---- */
-header{
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  background: rgba(246,239,231,.9);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--line);
-}
+/* ================================
+   GRID SYSTEM (สำคัญที่สุด)
+   ================================= */
 
-.nav{
-  display:flex;
-  align-items:center;
-  justify-content: space-between;
-  padding: 14px 0;
-  gap: 16px;
-}
-
-.brand{
-  display:flex;
-  align-items:center;
-  gap: 12px;
-  min-width: 240px;
-}
-
-.brand img{
-  width: 42px;
-  height: 42px;
-  border-radius: 10px;
-  border: 1px solid var(--line);
-  background:#fff;
-}
-
-.brand .title{
-  font-weight: 800;
-  letter-spacing: .2px;
-}
-
-.brand .subtitle{
-  font-size: 12px;
-  color: var(--muted);
-  margin-top: 2px;
-}
-
-.menu{
-  display:flex;
-  align-items:center;
-  gap: 18px;
-  flex-wrap: wrap;
-  justify-content:flex-end;
-}
-
-.menu a{
-  font-size: 14px;
-  color: var(--muted);
-  padding: 8px 10px;
-  border-radius: 10px;
-  transition: .15s ease;
-}
-
-.menu a:hover{
-  background: rgba(62,47,42,.06);
-  color: var(--ink);
-}
-
-/* ---- Hero ---- */
-.hero{
-  padding: 34px 0 14px;
-  background: linear-gradient(180deg, rgba(46,125,107,.10) 0%, rgba(242,160,70,.10) 45%, rgba(246,239,231,0) 100%);
-}
-
-.hero-card{
-  background: rgba(255,255,255,.75);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 28px 22px;
-  box-shadow: var(--shadow);
-  text-align:center;
-}
-
-.hero-card h1{
-  margin: 0 0 8px;
-  font-size: clamp(24px, 4vw, 34px);
-  letter-spacing: .2px;
-}
-
-.tagline{
-  margin: 0;
-  color: var(--green);
-  font-weight: 800;
-}
-
-.lead{
-  margin: 10px auto 0;
-  max-width: 760px;
-  color: var(--muted);
-  line-height: 1.55;
-}
-
-.btn-row{
-  margin-top: 16px;
-  display:flex;
-  gap: 12px;
-  justify-content:center;
-  flex-wrap: wrap;
-}
-
-/* ---- Sections ---- */
-.section{ padding: 24px 0 46px; }
-h2{ margin: 0 0 8px; font-size: 20px; }
-.small{ margin: 0; color: var(--muted); font-size: 13px; line-height: 1.6; }
-
-/* ---- Buttons ---- */
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap: 8px;
-  padding: 12px 18px;
-  border-radius: 999px;
-  font-weight: 800;
-  border: 1px solid rgba(0,0,0,.08);
-  transition: .15s ease;
-  user-select:none;
-}
-
-.btn:hover{ transform: translateY(-1px); filter: brightness(0.98); }
-.btn:active{ transform: translateY(0px); }
-
-.btn.orange{ background: var(--orange); color:#fff; }
-.btn.orange:hover{ background: var(--orange2); }
-
-.btn.green{ background: var(--green); color:#fff; }
-.btn.green:hover{ filter: brightness(.95); }
-
-.btn.ghost{
-  background: transparent;
-  border: 1px solid var(--line);
-  color: var(--ink);
-}
-
-.btn.small{
-  padding: 9px 14px;
-  font-size: 13px;
-}
-
-/* ---- Status Pills ---- */
-.badge{
-  position:absolute;
-  top: 10px;
-  left: 10px;
-  display:inline-flex;
-  align-items:center;
-  gap: 6px;
-  padding: 6px 10px;
-  border-radius: 999px;
-  font-weight: 900;
-  font-size: 12px;
-  border: 1px solid rgba(0,0,0,.06);
-  background:#fff;
-}
-
-.status.available{ background:#e6f6ef; color: var(--green2); }
-.status.screening{ background:#fff4e0; color:#c67c00; }
-.status.adopted{ background:#fdeaea; color:#b00020; }
-
-/* ---- Dog Grid ---- */
 .dog-grid{
-  margin-top: 18px;
   display:grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
+  grid-template-columns:repeat(3, 1fr);
+  gap:24px;
+  margin-top:20px;
+  width:100%;
 }
+
+/* ================================
+   CARD
+   ================================= */
 
 .dog-card{
-  background: rgba(255,255,255,.86);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
+  background:var(--card);
+  border-radius:20px;
+  box-shadow:var(--shadow);
   overflow:hidden;
-  box-shadow: var(--shadow2);
-  transition: .15s ease;
+  transition:0.2s ease;
+  display:flex;
+  flex-direction:column;
 }
 
 .dog-card:hover{
-  transform: translateY(-2px);
+  transform:translateY(-6px);
 }
 
 .dog-photo{
-  position: relative;
-  height: 190px;
-  background:
-    linear-gradient(135deg, rgba(46,125,107,.18), rgba(242,160,70,.18));
-  border-bottom: 1px solid var(--line);
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  position:relative;
+  height:220px;
+  background:linear-gradient(135deg,#e8f5f1,#fde8cf);
 }
 
 .dog-photo img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: .9;
+  height:100%;
+  object-fit:cover;
 }
 
 .dog-body{
-  padding: 16px 16px 18px;
-}
-
-.dog-title{
-  margin: 0 0 8px;
-  font-size: 16px;
-  letter-spacing: .2px;
-}
-
-.dog-meta{
-  margin: 6px 0;
-  color: var(--muted);
-  font-size: 13px;
-  line-height: 1.55;
-}
-
-.dog-desc{
-  margin: 10px 0 0;
-  color: var(--muted);
-  font-size: 13px;
-  line-height: 1.6;
-}
-
-.dog-actions{
-  margin-top: 14px;
+  padding:18px;
   display:flex;
-  gap: 10px;
-  flex-wrap: wrap;
+  flex-direction:column;
+  gap:6px;
 }
 
-/* ---- Contact Card ---- */
-.contact-card{
-  margin-top: 22px;
-  background: rgba(255,255,255,.8);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 18px;
-  box-shadow: 0 10px 30px rgba(0,0,0,.06);
+.dog-body h3{
+  margin:0;
+  font-size:16px;
 }
 
-/* ---- Footer ---- */
-footer{
-  margin-top: 28px;
-  padding: 18px 0 40px;
-  background: rgba(239,230,221,.8);
-  border-top: 1px solid var(--line);
-  text-align:center;
+.dog-body p{
+  margin:0;
+  font-size:13px;
+  color:var(--muted);
 }
 
-/* ---- Responsive ---- */
-@media (max-width: 980px){
-  .dog-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+/* ================================
+   BADGE STATUS
+   ================================= */
+
+.badge{
+  position:absolute;
+  top:10px;
+  left:10px;
+  padding:6px 10px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:700;
+  background:white;
 }
 
-@media (max-width: 720px){
-  .nav{ align-items:flex-start; flex-direction: column; }
-  .brand{ min-width: 0; }
-  .menu{ width:100%; justify-content:flex-start; gap: 8px; }
-  .menu a{ padding: 8px 8px; }
-  .hero-card{ text-align:left; }
-  .btn-row{ justify-content:flex-start; }
-  .dog-grid{ grid-template-columns: 1fr; }
-  .dog-photo{ height: 220px; }
+.status.available{
+  background:#e6f6ef;
+  color:#1b7f5c;
+}
+
+.status.screening{
+  background:#fff4e0;
+  color:#c67c00;
+}
+
+.status.adopted{
+  background:#fdeaea;
+  color:#b00020;
+}
+
+/* ================================
+   BUTTONS
+   ================================= */
+
+.btn{
+  display:inline-block;
+  padding:10px 16px;
+  border-radius:999px;
+  font-weight:700;
+  font-size:13px;
+  text-decoration:none;
+  transition:0.2s ease;
+}
+
+.btn.orange{
+  background:var(--orange);
+  color:white;
+}
+
+.btn.orange:hover{
+  background:var(--orange-dark);
+}
+
+.btn.small{
+  font-size:12px;
+  padding:8px 14px;
+}
+
+.btn.ghost{
+  border:1px solid var(--border);
+  background:white;
+  color:var(--ink);
+}
+
+/* ================================
+   RESPONSIVE
+   ================================= */
+
+@media (max-width:1024px){
+  .dog-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media (max-width:640px){
+  .dog-grid{
+    grid-template-columns:1fr;
+  }
 }
